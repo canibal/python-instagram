@@ -34,7 +34,7 @@ reactor.register_callback(subscriptions.SubscriptionType.TAG, process_tag_update
 @route('/')
 def home():
     try:
-        url = unauthenticated_api.get_authorize_url(scope=["likes","comments"])
+        url = unauthenticated_api.get_authorize_url(scope=["likes","comments","basic","public_content","follower_list","relationships"])
         return '<a href="%s">Connect with Instagram</a>' % url
     except Exception as e:
         print(e)
